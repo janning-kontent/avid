@@ -4,10 +4,14 @@ import { envIdCookieName, previewApiKeyCookieName } from './lib/constants/cookie
 import { createQueryString } from './lib/routing';
 import { defaultEnvId, defaultPreviewKey } from './lib/utils/env';
 
+import { MiddlewareRequest } from '@netlify/next' 
+
 const envIdRegex = /(?<envId>[0-9a-f]{8}(-[0-9a-f]{4}){3}-[0-9a-f]{12})(?<remainingUrl>.*)/;
 
 export const middleware = (request: NextRequest) => {
-  const currentEnvId = request.cookies.get(envIdCookieName)?.value ?? defaultEnvId;
+  const middlewareRequest = new MiddlewareRequest(request) 
+
+  const currentEnvId = middlewareRequest.cookies.get(envIdCookieName)?.value ?? defaultEnvId;
 
   // the order of functions is important
   const handlers = [
@@ -18,9 +22,9 @@ export const middleware = (request: NextRequest) => {
     handleEmptyApiKeyCookie(currentEnvId),
     handleEmptyCookies
   ];
-  const initialResponse = request.nextUrl.pathname.startsWith("/api/")
+  const initialResponse = middlewareRequest.nextUrl.pathname.startsWith("/api/")
     ? NextResponse.next()
-    : NextResponse.rewrite(new URL(`/${currentEnvId}${request.nextUrl.pathname ? `${request.nextUrl.pathname}` : ''}`, request.url));
+    : NextResponse.rewrite(new URL(`/${currentEnvId}${middlewareRequest.nextUrl.pathname ? `${middlewareRequest.nextUrl.pathname}` : ''}`, middlewareRequest.url));
 
   return handlers.reduce((prevResponse, handler) => handler(prevResponse, request), initialResponse);
 };
