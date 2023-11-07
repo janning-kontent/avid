@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    /* for better anchor link experience */
+    --scroll-behavior: smooth !important;
+    scroll-behavior: smooth !important;
+  }
+
+  .heading a {
+    @apply border-l-4 pl-7 -ml-10 font-normal scroll-m-20 no-underline;
+  }
+
+  .heading a:hover {
+    @apply border-gray-300;
+  }
+
+  .heading a.fact {
+    @apply border-none -ml-8;
+  }
+
+  h1.heading {
+    @apply text-6xl;
+    margin-top: 0;
+  }
+
+  h2.heading {
+    @apply text-5xl;
+    margin-top: 0;
+  }
+
+  h3.heading {
+    @apply text-4xl;
+    margin-top: 0;
+  }
+
+  h4.heading {
+    @apply text-3xl;
+    margin-top: 0;
+  }
+
+  h5.heading {
+    @apply text-2xl;
+    margin-top: 0;
+  }
+
+  h6.heading {
+    @apply text-xl;
+    margin-top: 0;
+  }
+}
+
+.component_full-width {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+}
