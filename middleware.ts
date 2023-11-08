@@ -4,14 +4,10 @@ import { envIdCookieName, previewApiKeyCookieName } from './lib/constants/cookie
 import { createQueryString } from './lib/routing';
 import { defaultEnvId, defaultPreviewKey } from './lib/utils/env';
 
-import { MiddlewareRequest } from '@netlify/next' 
-
 const envIdRegex = /(?<envId>[0-9a-f]{8}(-[0-9a-f]{4}){3}-[0-9a-f]{12})(?<remainingUrl>.*)/;
 
 export const middleware = (request: NextRequest) => {
-  const middlewareRequest = new MiddlewareRequest(request) 
-
-  const currentEnvId = middlewareRequest.cookies.get(envIdCookieName)?.value ?? defaultEnvId;
+  const currentEnvId = request.cookies.get(envIdCookieName)?.value ?? defaultEnvId;
 
   // the order of functions is important
   const handlers = [
@@ -22,16 +18,14 @@ export const middleware = (request: NextRequest) => {
     handleEmptyApiKeyCookie(currentEnvId),
     handleEmptyCookies
   ];
-
-  const initialResponse = middlewareRequest.nextUrl.pathname.startsWith("/api/")
+  const initialResponse = request.nextUrl.pathname.startsWith("/api/")
     ? NextResponse.next()
-    : NextResponse.rewrite(new URL(`/${currentEnvId}${middlewareRequest.nextUrl.pathname ? `${middlewareRequest.nextUrl.pathname}` : ''}`, middlewareRequest.url));
+    : NextResponse.rewrite(new URL(`/${currentEnvId}${request.nextUrl.pathname ? `${request.nextUrl.pathname}` : ''}`, request.url));
 
   return handlers.reduce((prevResponse, handler) => handler(prevResponse, request), initialResponse);
 };
 
-const handleExplicitProjectRoute = (currentEnvId: string) => (prevResponse: NextResponse, origRequest: NextRequest) => {
-  const request = new MiddlewareRequest(origRequest) 
+const handleExplicitProjectRoute = (currentEnvId: string) => (prevResponse: NextResponse, request: NextRequest) => {
   const regexResult = request.nextUrl.pathname.match(envIdRegex);
   const routeEnvId = regexResult?.groups?.envId
   const remainingUrl = regexResult?.groups?.remainingUrl;
@@ -62,8 +56,7 @@ const handleExplicitProjectRoute = (currentEnvId: string) => (prevResponse: Next
   return NextResponse.redirect(new URL(`${remainingUrl ?? ''}?${createQueryString(Object.fromEntries(request.nextUrl.searchParams.entries()))}`, request.nextUrl.origin));
 }
 
-const handleEmptyApiKeyCookie = (currentEnvId: string) => (prevResponse: NextResponse, origRequest: NextRequest) => {
-  const request = new MiddlewareRequest(origRequest) 
+const handleEmptyApiKeyCookie = (currentEnvId: string) => (prevResponse: NextResponse, request: NextRequest) => {
   if (request.cookies.get(previewApiKeyCookieName)?.value || !request.nextUrl.pathname.startsWith("/api/preview")) {
     return prevResponse;
   }
@@ -75,31 +68,21 @@ const handleEmptyApiKeyCookie = (currentEnvId: string) => (prevResponse: NextRes
   }
 };
 
-const handleArticlesRoute = (currentEnvId: string) => (prevResponse: NextResponse, origRequest: NextRequest) => {
-  const request = new MiddlewareRequest(origRequest) 
-  return request.nextUrl.pathname === '/articles'
+const handleArticlesRoute = (currentEnvId: string) => (prevResponse: NextResponse, request: NextRequest) => request.nextUrl.pathname === '/articles'
   ? NextResponse.rewrite(new URL(`/${currentEnvId}/articles/category/all/page/1`, request.url))
   : prevResponse;
-}
 
-const handleArticlesCategoryRoute = (prevReponse: NextResponse, origRequest: NextRequest) => {
-  const request = new MiddlewareRequest(origRequest) 
-  return request.nextUrl.pathname === '/articles/category/all'
+const handleArticlesCategoryRoute = (prevReponse: NextResponse, request: NextRequest) => request.nextUrl.pathname === '/articles/category/all'
   // Redirect to the /articles when manually type the /articles/category/all URL
   ? NextResponse.redirect(new URL('/articles', request.url))
   : prevReponse;
-}
 
-const handleArticlesCategoryWithNoPaginationRoute = (currentEnvId: string) => (prevResponse: NextResponse, origRequest: NextRequest) => {
-  const request = new MiddlewareRequest(origRequest) 
-  return /^\/articles\/category\/[^/]+$/.test(request.nextUrl.pathname)
+const handleArticlesCategoryWithNoPaginationRoute = (currentEnvId: string) => (prevResponse: NextResponse, request: NextRequest) => /^\/articles\/category\/[^/]+$/.test(request.nextUrl.pathname)
   // If there is no pagination, but category provided - add the first page ti URL path
   ? NextResponse.rewrite(new URL(`/${currentEnvId}${request.nextUrl.pathname}/page/1`, request.url))
   : prevResponse
-}
 
-const handleEmptyCookies = (prevResponse: NextResponse, origRequest: NextRequest) => {
-  const request = new MiddlewareRequest(origRequest) 
+const handleEmptyCookies = (prevResponse: NextResponse, request: NextRequest) => {
   if (!request.cookies.get(envIdCookieName)?.value && !prevResponse.cookies.get(envIdCookieName)) {
     prevResponse.cookies.set(envIdCookieName, defaultEnvId, cookieOptions);
   }
