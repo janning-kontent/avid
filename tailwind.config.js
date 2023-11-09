@@ -29,7 +29,7 @@ module.exports = {
         tertiary: {
           light: '#FFFDE7',
           DEFAULT: '#FFC107',
-          dark: '#FFA000',cd
+          dark: '#FFA000',
         },
       },
     },
