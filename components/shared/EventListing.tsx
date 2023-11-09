@@ -41,7 +41,7 @@ export const EventListingComponent: FC<Props> = (props) => {
           true
         )}
       >
-        <h2 className='m-0 mt-16 mb-8'>{props.item.elements.title?.value}</h2>
+        <h2 className='m-0 mt-16 mb-8 pt-4'>{props.item.elements.title?.value}</h2>
         {events?.map((event) => (
           <EventItem
             key={event.system.id}
