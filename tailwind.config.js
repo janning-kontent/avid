@@ -29,13 +29,11 @@ module.exports = {
         tertiary: {
           light: '#FFFDE7',
           DEFAULT: '#FFC107',
-          dark: '#FFA000',
+          dark: '#FFA000',cd
         },
       },
     },
   },
   plugins: [require('@tailwindcss/typography')],
 };
- .my-element {
-  background-color: theme('colors.manufacturing.DEFAULT');
-}
+
