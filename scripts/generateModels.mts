@@ -75,7 +75,7 @@ await generateModelsAsync({
   isEnterpriseSubscription: false,
   addTimestamp: false,
   kontentUrl: "https://manage.kontent.ai/v2",
-  elementResolver: (_, elementCodename) => resolveName(elementCodename, "camelCase"),
+  elementResolver: (element: unknown, elementCodename: string) => resolveName(elementCodename, "camelCase"),
   contentTypeResolver: byNameResolver("pascalCase"),
   taxonomyTypeResolver: byNameResolver("pascalCase"),
   contentTypeFileResolver: byNameResolver("camelOrPascalCase"),
