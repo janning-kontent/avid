@@ -1,5 +1,5 @@
 import * as fsPromises from "fs/promises";
-import { DefaultResolverType, generateModelsAsync, textHelper } from '@kontent-ai/model-generator';
+import { DefaultResolverType, generateModelsAsync, textHelper } from '../lib/types/';
 import * as dotenv from "dotenv";
 
 dotenv.config({ path: ".env.local" });

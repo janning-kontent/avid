@@ -4,6 +4,7 @@
   "scripts": {
     "generateModels": "tsc --project scripts/tsconfig.json && node scripts/build/generateModels.mjs",
     "dev": "next dev",
+    "ngrok": "ngrok http 3000",
     "lint": "next lint",
     "build": "next build",
     "export": "next export",
