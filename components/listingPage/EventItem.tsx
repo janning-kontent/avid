@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import {
+  mainAvidBgClass,
   mainColorBgClass,
   mainColorTextClass,
 } from '../../lib/constants/colors';
@@ -34,7 +35,7 @@ export const EventItem: FC<Props> = (props) => {
         {...createItemSmartLink(props.itemId, props.itemName)}
       >
         <div
-          className={`${mainColorTextClass[siteCodename]} ${mainColorBgClass[siteCodename]} rounded-lg lg:w-2/12 py-4 block h-full bg-gradient-to-tl from-manufacturing-dark via-manufacturing-light to-manufacturing-light`}
+          className={`${mainColorTextClass[siteCodename]} ${mainAvidBgClass[siteCodename]} rounded-lg lg:w-2/12 py-4 block h-full`}
         >
           {props.startDate && (
             <div className='text-center tracking-wide'>

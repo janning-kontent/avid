@@ -95,14 +95,14 @@ const MenuList: FC<MenuListProps> = (props) => {
               link.elements.subpages.value.length > 0 ? (
                 <div
                   className={`${
-                    i === props.activeMenu ? 'bg-white text-black' : ''
-                  } md:hover:bg-white md:hover:text-black h-full`}
+                    i === props.activeMenu ? 'bg-blue-500 text-white' : ''
+                  } md:hover:bg-white md:hover:text-white h-full`}
                 >
                   <DropdownButton item={link} isPreview={props.isPreview} />
                   <div
                     className={`${
                       i === props.activeMenu ? 'block' : 'hidden'
-                    } md:group-hover:block absolute z-50 left-0 shadow-2xl bg-white text-black border-gray-200 w-full `}
+                    } md:group-hover:block absolute z-50 left-0 shadow-2xl bg-blue-500 text-white border-gray-200 w-full `}
                   >
                     <DropdownMenuItems
                       links={link.elements.subpages.linkedItems}
@@ -117,7 +117,7 @@ const MenuList: FC<MenuListProps> = (props) => {
               ) : (
                 <Link
                   rel='noopener noreferrer'
-                  className='h-full flex items-center justify-between w-full py-2 px-6 font-medium text-black border-b border-gray-100 md:w-auto md:bg-transparent md:border-0 md:hover:bg-white hover:text-gray-900'
+                  className='h-full flex items-center justify-between w-full py-2 px-6 font-medium text-white border-b border-gray-100 md:w-auto md:bg-transparent md:border-0 md:hover:bg-white hover:text-gray-900'
                   href={resolveUrlPath(
                     {
                       type: link.system.type,
@@ -141,7 +141,7 @@ const DropdownButton: FC<Props> = (props) => {
     <button className='h-full flex items-center justify-between w-full p-4 py-2 font-medium border-b border-gray-100 md:w-auto md:bg-transparent md:border-0'>
       <Link
         rel='noopener noreferrer'
-        className='h-full flex items-center justify-between w-full py-2 font-medium text-black border-b border-gray-100 md:w-auto md:bg-transparent md:border-0 md:hover:bg-white hover:text-gray-900'
+        className='h-full flex items-center justify-between w-full py-2 font-medium text-white border-b border-gray-100 md:w-auto md:bg-transparent md:border-0 md:hover:bg-white hover:text-gray-900'
         href={resolveUrlPath(
           {
             type: props.item.system.type,
@@ -161,7 +161,7 @@ const DropdownMenuItems: FC<DropdownMenuProps> = (props) => {
   const router = useRouter();
 
   return (
-    <ul className='grid gap-2 max-w-screen-xl px-4 py-5 mx-auto text-black sm:grid-cols-2 md:grid-cols-3 md:px-6'>
+    <ul className='grid gap-2 max-w-screen-xl px-4 py-5 mx-auto text-white sm:grid-cols-2 md:grid-cols-3 md:px-6'>
       {props.taxonomies?.length > 0
         ? props.taxonomies?.map((taxonomy) => (
             <li key={taxonomy.codename}>
@@ -223,8 +223,8 @@ export const Menu: FC<Props> = (props) => {
     setActiveMenu(menuId === activeMenu ? -1 : menuId);
 
   return (
-    <div className={`w-full fixed z-30 bg-white py-4 shadow-2xl`}>
-      <div className='fixed z-50 bg-white rounded-lg opacity-30 hover:opacity-100 top-0 right-0'>
+    <div className={`w-full fixed z-30 bg-blue-500 text-white py-4 shadow-2xl`}>
+      <div className='fixed z-50 bg-blue-500 text-white rounded-lg opacity-30 hover:opacity-100 top-0 right-0'>
         <PreviewSwitcher isPreview={props.isPreview} />
       </div>
       <div className='flex justify-between items-center mx-auto max-w-screen-xl md:h-16 pr-4'>

@@ -7,7 +7,7 @@ import { useSiteCodename } from '../siteCodenameContext';
 import { IContentItem } from '@kontent-ai/delivery-sdk';
 import { ResolutionContext, resolveUrlPath } from '../../../lib/routing';
 import { isMultipleChoiceOptionPresent } from '../../../lib/utils/element-utils';
-import { mainColorBgClass } from '../../../lib/constants/colors';
+import { mainAvidBgClass, mainColorBgClass } from '../../../lib/constants/colors';
 
 type Link = Readonly<WSL_Page>;
 
@@ -125,7 +125,7 @@ export const Footer: FC<Props> = (props) => {
 
   return (
     <footer
-      className={`${mainColorBgClass[siteCodename]} w-screen py-8 text-white`}
+      className={`${mainAvidBgClass[siteCodename]} w-screen py-8 text-white`}
     >
       <div className='flex items-center mx-auto max-w-screen-xl px-4'>
         <div className='w-screen h-full md:flex justify-between z-40 md:pr-24 xl:pr-12 2xl:pr-0'>

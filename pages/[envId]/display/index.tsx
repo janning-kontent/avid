@@ -29,7 +29,7 @@ export const Products: FC<Props> = (props) => {
     <div className="bg-[url('/assets/bg-display-panel.jpg')] bg-[length:1750px] bg-[-300px_top] bg-no-repeat w-[1250px] h-[1250px] m-auto pt-[150px]">
       <div className="container display-panel">
         <div className="w-[900px] h-[500px] m-auto p-[20px 25px 0 25px]">
-          <img className="logo-display-panel" src={props.logo} alt="logo" /><br />
+          <img className="logo-display-panel" src={`https://avid.org/?_ga=2.160655803.766786623.1700249004-2008105248.1699479571`} alt="logo" /><br />
           {props.events.slice(0, 3).map((event, i) => {
             return <EventItem
               key={event.system.id}

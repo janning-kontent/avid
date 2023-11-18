@@ -8,6 +8,23 @@ export const mainColorHoverClass: PerCollection<string> = {
   default: 'hover:bg-blue-100',
 };
 
+export const mainAvidBgClass: PerCollection<string> = {
+  sandbox: 'bg-blue-500',
+  elitebuild: 'bg-blue-500',
+  support: 'bg-blue-500',
+  pdf: 'bg-blue-500',
+  default: 'bg-blue-500',
+};
+
+export const mainBtnBgClass: PerCollection<string> = {
+  sandbox: 'bg-yellow-500',
+  elitebuild: 'bg-green-500',
+  support: 'bg-red-500',
+  pdf: 'bg-blue-500',
+  default: 'bg-blue-500',
+};
+
+
 export const mainColorBgClass: PerCollection<string> = {
   sandbox: 'bg-manufacturing',
   elitebuild: 'bg-elitebuild',

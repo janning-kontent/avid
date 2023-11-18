@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { MilestoneListing } from '../../models';
 import {
+  mainAvidBgClass,
   mainColorBgClass,
   mainColorTextClass,
 } from '../../lib/constants/colors';
@@ -15,7 +16,7 @@ export const MilestoneListingComponent: FC<Props> = (props) => {
 
   return (
     <div
-      className={`bg-gradient-to-tl from-manufacturing-dark via-manufacturing-light to-manufacturing-light w-screen relative left-1/2 right-1/2 [margin-left:-50vw] mb-24`}
+      className={`${mainAvidBgClass[siteCodename]} py-8 text-white w-screen relative left-1/2 right-1/2 [margin-left:-50vw] mb-24`}
     >
       <div
         className={`flex flex-wrap mx-auto w-full max-w-screen-xl py-10 ${mainColorTextClass[siteCodename]} justify-center`}

@@ -1,11 +1,14 @@
 import { FC } from 'react';
-
+import { mainAvidBgClass } from '../../lib/constants/colors';
+import { useSiteCodename } from './siteCodenameContext';
 import {
   createElementSmartLink,
   createItemSmartLink,
+
 } from '../../lib/utils/smartLinkUtils';
 import { contentTypes, Testimonial } from '../../models';
 import Image from 'next/image';
+import { siteCodename } from '../../lib/utils/env';
 
 type Props = Readonly<{
   item: Testimonial;
@@ -19,7 +22,7 @@ export const TestimonialComponent: FC<Props> = (props) => {
     authorItem.elements.lastName.value;
   return (
     <section
-      className='mb-24 w-screen relative left-1/2 right-1/2 [margin-left:-50vw] bg-gradient-to-tl from-manufacturing-dark via-manufacturing-light to-manufacturing-light'
+    className={`${mainAvidBgClass[siteCodename]} py-8 text-white w-screen relative left-1/2 right-1/2 [margin-left:-50vw] mb-24`}
       {...createItemSmartLink(props.item.system.id, props.item.system.name)}
     >
       <div className='max-w-screen-xl px-4 py-6 mx-auto text-center lg:py-8 lg:px-6'>

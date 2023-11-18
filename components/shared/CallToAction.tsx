@@ -4,6 +4,7 @@ import { createItemSmartLink } from '../../lib/utils/smartLinkUtils';
 import { Elements } from '@kontent-ai/delivery-sdk';
 import {
   mainColorBgClass,
+  mainBtnBgClass,
   mainColorTextClass,
   mainColorHoverClass,
 } from '../../lib/constants/colors';
@@ -36,7 +37,7 @@ export const CallToActionComponent: FC<Props> = (props) => {
         props.item.system.name,
         true
       )}
-      className={`${mainColorBgClass[siteCodename]} ${mainColorTextClass[siteCodename]} ${mainColorHoverClass[siteCodename]} font-bold py-3 px-8 m-3 rounded duration-100 hover:scale-105 hover:drop-shadow`}
+      className={`${mainBtnBgClass[siteCodename]} ${mainColorTextClass[siteCodename]} ${mainColorHoverClass[siteCodename]} font-bold py-3 px-8 m-3 rounded duration-100 hover:scale-105 hover:drop-shadow`}
     >
       {props.item.elements.title.value}
     </button>
