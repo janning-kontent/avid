@@ -66,6 +66,7 @@ const Home: NextPage<Props> = (props) => {
   }, [sdk, props.isPreview, props.language]);
 
   return (
+    
     <AppPage
       item={homepage}
       siteCodename={props.siteCodename}

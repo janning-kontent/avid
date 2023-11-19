@@ -70,7 +70,7 @@ const MenuList: FC<MenuListProps> = (props) => {
   }, [getArticleCategories]);
 
   return (
-    <ul
+     <ul
       className={`${
         props.smallMenuActive ? 'flex' : 'hidden'
       } flex-col md:flex md:gap-4 font-medium md:flex-row h-full`}
@@ -132,7 +132,7 @@ const MenuList: FC<MenuListProps> = (props) => {
             </li>
           )
       )}
-    </ul>
+     </ul>
   );
 };
 

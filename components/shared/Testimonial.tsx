@@ -39,7 +39,7 @@ export const TestimonialComponent: FC<Props> = (props) => {
             />
           </svg>
           <blockquote>
-            <p className='text-2xl font-medium text-gray-900 dark:text-white'>
+            <p className='text-2xl font-medium text-white dark:text-white'>
               {props.item.elements.quote.value}
             </p>
           </blockquote>
@@ -70,7 +70,7 @@ export const TestimonialComponent: FC<Props> = (props) => {
                 {fullName}
               </div>
               <div
-                className='pl-3 text-sm font-light text-gray-500 dark:text-white'
+                className='pl-3 text-sm font-light text-white dark:text-white'
                 {...createElementSmartLink(
                   contentTypes.person.elements.occupation.codename,
                   true

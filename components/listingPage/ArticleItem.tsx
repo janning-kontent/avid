@@ -6,6 +6,7 @@ import {
   mainColorBgClass,
   mainColorTextClass,
   mainColorHoverClass,
+  mainAvidBgClass,
 } from '../../lib/constants/colors';
 import { formatDate } from '../../lib/utils/dateTime';
 import { useSiteCodename } from '../shared/siteCodenameContext';
@@ -57,7 +58,7 @@ export const ArticleItem: FC<Props> = (props) => {
           </p>
         </div>
         <button
-          className={`${mainColorTextClass[siteCodename]} block mx-auto w-fit my-6 font-semibold line-clamp-6 ${mainColorHoverClass[siteCodename]} ${mainColorBgClass[siteCodename]} py-2 px-4 lg:rounded hover:scale-105 duration-100 `}
+          className={`${mainColorTextClass[siteCodename]} block mx-auto w-fit my-6 font-semibold line-clamp-6 ${mainColorHoverClass[siteCodename]} ${mainAvidBgClass[siteCodename]} py-2 px-4 lg:rounded hover:scale-105 duration-100 `}
         >
           Continue reading
         </button>
