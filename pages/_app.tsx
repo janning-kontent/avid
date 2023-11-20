@@ -12,6 +12,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <title>{perCollectionSEOTitle.sandbox}</title>
         <link rel="icon" href="/favicon.png" />
+        
       </Head>
       <Analytics />
     </div>

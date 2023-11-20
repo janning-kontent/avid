@@ -35,7 +35,7 @@ const MenuList: FC<MenuListProps> = (props) => {
     <ul
       className={`${
         props.smallMenuActive ? 'flex' : 'hidden'
-      } flex-col md:flex md:gap-4 font-medium md:flex-row h-full`}
+      } flex-col md:flex md:gap-4 font-semibold md:flex-row h-full`}
     >
       {props.items.map(
         (link, i) =>
@@ -125,7 +125,7 @@ export const Footer: FC<Props> = (props) => {
 
   return (
     <footer
-      className={`${mainAvidBgClass[siteCodename]} w-screen py-8 text-white`}
+      className={`${mainAvidBgClass[siteCodename]} w-screen py-8 text-white font-semibold`}
     >
       <div className='flex items-center mx-auto max-w-screen-xl px-4'>
         <div className='w-screen h-full md:flex justify-between z-40 md:pr-24 xl:pr-12 2xl:pr-0'>

@@ -73,7 +73,7 @@ const MenuList: FC<MenuListProps> = (props) => {
      <ul
       className={`${
         props.smallMenuActive ? 'flex' : 'hidden'
-      } flex-col md:flex md:gap-4 font-medium md:flex-row h-full`}
+      } flex-col md:flex md:gap-4 md:flex-row h-full font-semibold`}
     >
       {props.items.map(
         (link, i) =>
@@ -86,17 +86,15 @@ const MenuList: FC<MenuListProps> = (props) => {
               className={`${
                 isCurrentNavigationItemActive(link, router)
                   ? ''
-                  : 'border-l-transparent border-t-transparent'
+                  : ''
               }
-        border-gray-500 border-l-8 border-t-0 md:border-t-8 md:border-l-0 h-full group grow`}
+         h-full group grow`}
               onClick={() => props.handleClick(i)}
             >
               {link.elements.url.value == reservedListingSlugs.articles ||
               link.elements.subpages.value.length > 0 ? (
                 <div
-                  className={`${
-                    i === props.activeMenu ? 'bg-cyan-500 text-white' : ''
-                  } md:hover:bg-white md:hover:text-white h-full`}
+                 
                 >
                   <DropdownButton item={link} isPreview={props.isPreview} />
                   <div
@@ -117,7 +115,7 @@ const MenuList: FC<MenuListProps> = (props) => {
               ) : (
                 <Link
                   rel='noopener noreferrer'
-                  className='h-full flex items-center justify-between w-full py-2 px-6 font-medium text-white border-b border-gray-100 md:w-auto md:bg-transparent md:border-0 md:hover:bg-white hover:text-gray-900'
+                  className='h-full flex items-center justify-between w-full py-2 px-2 font-semibold text-white border-b border-gray-100 md:w-auto md:bg-transparent md:border-0'
                   href={resolveUrlPath(
                     {
                       type: link.system.type,
@@ -138,10 +136,10 @@ const MenuList: FC<MenuListProps> = (props) => {
 
 const DropdownButton: FC<Props> = (props) => {
   return (
-    <button className='h-full flex items-center justify-between w-full p-4 py-2 font-medium border-b border-gray-100 md:w-auto md:bg-transparent md:border-0'>
+    <button className='h-full flex items-center justify-between w-full p-4 py-2 font-semibold border-b border-gray-100 md:w-auto md:bg-transparent md:border-0'>
       <Link
         rel='noopener noreferrer'
-        className='h-full flex items-center justify-between w-full py-2 font-medium text-white border-b border-gray-100 md:w-auto md:bg-transparent md:border-0 md:hover:bg-white hover:text-gray-900'
+        className='h-full flex items-center justify-between w-full py-2 font-semibold text-white border-b border-gray-100 md:w-auto md:bg-transparent md:border-0 md:hover:bg-white hover:text-gray-900'
         href={resolveUrlPath(
           {
             type: props.item.system.type,

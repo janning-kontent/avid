@@ -7,6 +7,9 @@
     /* for better anchor link experience */
     --scroll-behavior: smooth !important;
     scroll-behavior: smooth !important;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
   }
 
   .heading a {
