@@ -14,7 +14,7 @@ type Props = Readonly<{
 
 export const HeroImage: FC<Props> = (props) => (
   <figure
-    className={`relative m-0 w-full h-[48rem] mb-24 ${props.className ?? ''}`}
+    className={`relative m-0 w-full h-[32rem] mb-24 ${props.className ?? ''}`}
     {...createItemSmartLink(props.itemId, props.itemName)}
   >
     {

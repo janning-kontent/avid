@@ -95,14 +95,14 @@ const MenuList: FC<MenuListProps> = (props) => {
               link.elements.subpages.value.length > 0 ? (
                 <div
                   className={`${
-                    i === props.activeMenu ? 'bg-blue-500 text-white' : ''
+                    i === props.activeMenu ? 'bg-cyan-500 text-white' : ''
                   } md:hover:bg-white md:hover:text-white h-full`}
                 >
                   <DropdownButton item={link} isPreview={props.isPreview} />
                   <div
                     className={`${
                       i === props.activeMenu ? 'block' : 'hidden'
-                    } md:group-hover:block absolute z-50 left-0 shadow-2xl bg-blue-500 text-white border-gray-200 w-full `}
+                    } md:group-hover:block absolute z-50 left-0 shadow-2xl bg-cyan-500 text-white border-gray-200 w-full `}
                   >
                     <DropdownMenuItems
                       links={link.elements.subpages.linkedItems}
@@ -223,8 +223,8 @@ export const Menu: FC<Props> = (props) => {
     setActiveMenu(menuId === activeMenu ? -1 : menuId);
 
   return (
-    <div className={`w-full fixed z-30 bg-blue-500 text-white py-4 shadow-2xl`}>
-      <div className='fixed z-50 bg-blue-500 text-white rounded-lg opacity-30 hover:opacity-100 top-0 right-0'>
+    <div className={`w-full fixed z-30 bg-lightblue text-white py-4 shadow-2xl`}>
+      <div className='fixed z-50 bg-lightblue text-white rounded-lg opacity-30 hover:opacity-100 top-0 right-0'>
         <PreviewSwitcher isPreview={props.isPreview} />
       </div>
       <div className='flex justify-between items-center mx-auto max-w-screen-xl md:h-16 pr-4'>

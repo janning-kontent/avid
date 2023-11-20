@@ -9,6 +9,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        lightblue: "#007ABA",
         manufacturing: {
           light: '#983123',
           DEFAULT: '#732318',
@@ -31,6 +32,7 @@ module.exports = {
           DEFAULT: '#FFC107',
           dark: '#FFA000',
         },
+
       },
     },
   },

@@ -9,7 +9,7 @@ export const mainColorHoverClass: PerCollection<string> = {
 };
 
 export const mainAvidBgClass: PerCollection<string> = {
-  sandbox: 'bg-blue-500',
+  sandbox: 'bg-lightblue',
   elitebuild: 'bg-blue-500',
   support: 'bg-blue-500',
   pdf: 'bg-blue-500',
