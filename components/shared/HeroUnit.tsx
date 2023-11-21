@@ -33,7 +33,7 @@ export const HeroUnitComponent: FC<Props> = (props) => {
         {...createItemSmartLink(props.item.system.id, props.item.system.name)}
       >
         <h1
-          className={`${mainColorTextClass[siteCodename]} m-0 text-3xl tracking-wide font-semibold text-center`}
+          className={`${mainColorTextClass[siteCodename]} m-0 text-3xl tracking-wide font-semibold text-left`}
           {...createElementSmartLink(
             contentTypes.hero_unit.elements.title.codename
           )}
@@ -41,9 +41,9 @@ export const HeroUnitComponent: FC<Props> = (props) => {
           {props.item.elements.title.value}
         </h1>
       </div>
-      <div className='py-1 px-3 w-full flex justify-center flex-col items-center'>
+      <div className='py-1 px-3 w-full flex justify-center flex-col items-left'>
         <h2
-          className='m-0 text-xl font-medium break-words hyphens-auto text-white text-center w-full lg:w-1/2 pb-8 max-w-5xl'
+          className='m-0 text-xl font-medium break-words hyphens-auto text-white text-left w-full lg:w-1/2 pb-8 max-w-5xl'
           lang='en'
           {...createElementSmartLink(
             contentTypes.hero_unit.elements.content.codename

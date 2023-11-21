@@ -14,6 +14,7 @@
 
   .heading a {
     @apply border-l-4 pl-7 -ml-10 font-normal scroll-m-20 no-underline;
+    color: #21459c;
   }
 
   .heading a:hover {
