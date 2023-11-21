@@ -1,9 +1,9 @@
-import { FC, useEffect, useState } from 'react';
-import { Event, EventListing } from '../../models';
-import { createItemSmartLink } from '../../lib/utils/smartLinkUtils';
-import { useSiteCodename } from './siteCodenameContext';
-import { useRouter } from 'next/router';
-import { EventItem } from '../listingPage/EventItem';
+import { FC, useEffect, useState } from "react";
+import { Event, EventListing } from "../../models";
+import { createItemSmartLink } from "../../lib/utils/smartLinkUtils";
+import { useSiteCodename } from "./siteCodenameContext";
+import { useRouter } from "next/router";
+import { EventItem } from "../listingPage/EventItem";
 
 type Props = Readonly<{
   item: EventListing;
@@ -17,15 +17,20 @@ export const EventListingComponent: FC<Props> = (props) => {
   const [events, setEvents] = useState<ReadonlyArray<Event> | undefined>();
   const categories = props.item.elements.eventType.value
     .map((term) => term.codename)
-    .join(', ');
+    .join(", ");
 
   useEffect(() => {
     const getEvents = async () => {
       const response = await fetch(
-        `/api/events?preview=${isPreview}&category=${categories}&language=${router.locale}`
+        `/api/events?preview=${isPreview}&category=${categories}&language=${router.locale}&order=elements.start_date_time[desc]`
       );
       const newData = await response.json();
-      setEvents(newData.events);
+      let result = newData.events.sort(
+        (a, b) =>
+          new Date(a.system.lastModified).getTime() -
+          new Date(b.system.lastModified).getTime()
+      );
+      setEvents(result);
       setTotalCount(newData.totalCount);
     };
     getEvents();
@@ -34,14 +39,14 @@ export const EventListingComponent: FC<Props> = (props) => {
   return (
     <>
       <div
-        className='prose w-full max-w-full py-4 lg:w-3/4 mx-auto'
+        className="prose w-full max-w-full py-4 lg:w-3/4 mx-auto"
         {...createItemSmartLink(
           props.item.system.id,
           props.item.system.name,
           true
         )}
       >
-        <h2 className='m-0 mb-8 pt-4'>{props.item.elements.title?.value}</h2>
+        <h2 className="m-0 mb-8 pt-4">{props.item.elements.title?.value}</h2>
         {events?.map((event) => (
           <EventItem
             key={event.system.id}
@@ -61,4 +66,4 @@ export const EventListingComponent: FC<Props> = (props) => {
   );
 };
 
-EventListingComponent.displayName = 'EventListingComponent';
+EventListingComponent.displayName = "EventListingComponent";
