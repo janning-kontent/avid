@@ -130,7 +130,7 @@ export const Footer: FC<Props> = (props) => {
       <div className='flex items-center mx-auto max-w-screen-xl px-4'>
         <div className='w-screen h-full md:flex justify-between z-40 md:pr-24 xl:pr-12 2xl:pr-0'>
           <div className='flex flex-row w-full justify-center'>
-            <div>Avid Education</div>
+            <div>AVID Education</div>
             <div className='border-l-2 pl-4 ml-4'>Copyright {currentYear}</div>
 
             {/* <MenuList
