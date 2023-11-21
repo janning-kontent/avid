@@ -30,7 +30,6 @@ export const EventListingComponent: FC<Props> = (props) => {
           new Date(a.elements.startDateTime.value).getTime() -
           new Date(b.elements.startDateTime.value).getTime()
       );
-      console.log(result);
       setEvents(result);
       setTotalCount(newData.totalCount);
     };
