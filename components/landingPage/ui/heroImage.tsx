@@ -57,7 +57,7 @@ type Props = Readonly<{
 
 export const HeroImage: FC<Props> = (props) => (
   <figure
-    className={`relative m-0 w-full h-[32rem] ${props.className ?? ''}`}
+    className={`relative m-0 w-full h-[32rem] mb-12 mt-12 ${props.className ?? ''}`}
     {...createItemSmartLink(props.itemId, props.itemName)}
   >
     {props.type?.startsWith('image') && (
@@ -80,7 +80,7 @@ export const HeroImage: FC<Props> = (props) => (
       />
     )}
     <div className='absolute inset-0 h-full flex flex-col items-center md:items-start justify-end pb-16 px-6 mx-10'>
-      <div className='flex flex-col mx-auto rounded-lg p-4'>
+      <div className='flex flex-col rounded-lg p-4'>
         {props.children}
       </div>
     </div>

@@ -16,7 +16,7 @@ export const MilestoneListingComponent: FC<Props> = (props) => {
 
   return (
     <div
-      className={`${mainAvidBgClass[siteCodename]} py-8 text-white w-screen relative left-1/2 right-1/2 [margin-left:-50vw] mb-24`}
+      className={`${mainAvidBgClass[siteCodename]} py-8 text-white w-screen relative left-1/2 right-1/2 [margin-left:-50vw] mb-12`}
     >
       <div
         className={`flex flex-wrap mx-auto w-full max-w-screen-xl py-10 ${mainColorTextClass[siteCodename]} justify-center`}
