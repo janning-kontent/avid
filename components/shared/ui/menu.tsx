@@ -264,9 +264,9 @@ export const Menu: FC<Props> = (props) => {
             />
           </div>
 
-          <div>
+          {/* <div>
             <LanguageBar />
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

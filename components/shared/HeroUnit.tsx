@@ -29,7 +29,7 @@ export const HeroUnitComponent: FC<Props> = (props) => {
       type={props.item.elements.backgroundImage.value[0]?.type}
     >
       <div
-        className={`py-5 md:py-5 px-3 w-full flex justify-center`}
+        className={`py-5 md:py-5 px-3 w-full flex`}
         {...createItemSmartLink(props.item.system.id, props.item.system.name)}
       >
         <h1
@@ -41,9 +41,9 @@ export const HeroUnitComponent: FC<Props> = (props) => {
           {props.item.elements.title.value}
         </h1>
       </div>
-      <div className='py-1 px-3 w-full flex justify-center flex-col items-left'>
+      <div className='py-1 px-3 w-full flex flex-col items-left'>
         <h2
-          className='m-0 text-xl font-medium break-words hyphens-auto text-white text-left w-full lg:w-1/2 pb-8 max-w-5xl'
+          className='m-0 text-xl font-medium break-words hyphens-auto text-white text-left w-full pb-8 max-w-5xl'
           lang='en'
           {...createElementSmartLink(
             contentTypes.hero_unit.elements.content.codename

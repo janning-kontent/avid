@@ -36,7 +36,7 @@ export const ArticleListingComponent: FC<Props> = (props) => {
 
   return (
     <>
-      <h2 className='m-0 mt-16'>{props.item.elements.title?.value}</h2>
+      <h2 className='m-0'>{props.item.elements.title?.value}</h2>
       <ul
         className='flex px-6 list-none gap-8 pt-4 pl-0 flex-wrap justify-center'
         {...createItemSmartLink(

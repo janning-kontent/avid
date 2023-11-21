@@ -167,10 +167,10 @@ const NextPrev: FC<NextPrevProps> = (props) => (
   <>
     <button
       type='button'
-      className='absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none'
+      className='absolute top-0 left-0 z-30 flex items-center h-full px-4 cursor-pointer group focus:outline-none'
       onClick={props.onPrev}
     >
-      <span className='inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white  group-focus:outline-none'>
+      <span className='inline-flex items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white  group-focus:outline-none'>
         <ArrowLeftIcon
           className='w-5 h-5 text-white sm:w-6 sm:h-6'
           aria-hidden='true'
@@ -180,10 +180,10 @@ const NextPrev: FC<NextPrevProps> = (props) => (
     </button>
     <button
       type='button'
-      className='absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none'
+      className='absolute top-0 right-0 z-30 flex items-center h-full px-4 cursor-pointer group focus:outline-none'
       onClick={props.onNext}
     >
-      <span className='inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none'>
+      <span className='inline-flex items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none'>
         <ArrowRightIcon
           className='w-5 h-5 text-white sm:w-6 sm:h-6'
           aria-hidden='true'

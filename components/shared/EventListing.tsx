@@ -34,14 +34,14 @@ export const EventListingComponent: FC<Props> = (props) => {
   return (
     <>
       <div
-        className='prose w-full max-w-full py-4 lg:w-3/4 mx-auto pb-24'
+        className='prose w-full max-w-full py-4 lg:w-3/4 mx-auto'
         {...createItemSmartLink(
           props.item.system.id,
           props.item.system.name,
           true
         )}
       >
-        <h2 className='m-0 mt-16 mb-8 pt-4'>{props.item.elements.title?.value}</h2>
+        <h2 className='m-0 mb-8 pt-4'>{props.item.elements.title?.value}</h2>
         {events?.map((event) => (
           <EventItem
             key={event.system.id}

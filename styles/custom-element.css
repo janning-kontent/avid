@@ -21,7 +21,7 @@
         -webkit-user-select: none;
         user-select: none;
         align-items: left;
-        justify-content: center;
+        justify-content: left;
     }
 
     .btn-sm {

@@ -23,13 +23,13 @@ export const MilestoneListingComponent: FC<Props> = (props) => {
       >
         {props.item.elements.gridItems.linkedItems.map((link) => (
           <div
-            className='my-10 p-4 flex flex-col text-center sm:w-1/2 md:w-1/3'
+            className='my-5 p-2 flex flex-col text-center sm:w-1/2 md:w-1/3'
             key={link.system.id}
           >
-            <div className='font-bold text-3xl'>
+            <div className='font-bold text-5xl'>
               {link.elements.title.value}
             </div>
-            <div>{link.elements.subtitle.value}</div>
+            <div style={{marginTop:'20px'}}>{link.elements.subtitle.value}</div>
           </div>
         ))}
       </div>

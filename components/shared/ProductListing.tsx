@@ -35,7 +35,7 @@ export const ProductListingComponent: FC<Props> = props => {
   }
   return (
     <>
-      <h2 className="m-0 mt-16">{props.item.elements.title?.value}</h2>
+      <h2 className="m-0">{props.item.elements.title?.value}</h2>
       <ul className="w-full min-h-full mt-4 m-0 md:mt-0 p-0 px-4 sm:px-0 grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-4 list-none items-center md:justify-start gap-2">
         {products?.map(product => (
           <ProductItem

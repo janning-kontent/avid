@@ -13,12 +13,13 @@ type Props = Readonly<{
 
 export const ContentChunkComponent: FC<Props> = (props) => (
   <div
-    className='px-10 py-3 vis-container'
+    className='px-10 py-6 vis-container'
     {...createItemSmartLink(props.item.system.id, props.item.system.codename)}
     {...createElementSmartLink(
       contentTypes.content_chunk.elements.content.codename
     )}
     {...createFixedAddSmartLink('end')}
+    style={{marginBottom:'20px'}}
   >
     <RichTextElement
       element={props.item.elements.content}
