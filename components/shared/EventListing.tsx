@@ -27,9 +27,10 @@ export const EventListingComponent: FC<Props> = (props) => {
       const newData = await response.json();
       let result = newData.events.sort(
         (a, b) =>
-          new Date(a.system.lastModified).getTime() -
-          new Date(b.system.lastModified).getTime()
+          new Date(a.elements.startDateTime.value).getTime() -
+          new Date(b.elements.startDateTime.value).getTime()
       );
+      console.log(result);
       setEvents(result);
       setTotalCount(newData.totalCount);
     };
