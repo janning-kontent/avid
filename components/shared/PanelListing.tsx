@@ -16,7 +16,7 @@ export const PanelListingComponent: FC<Props> = (props) => {
 
   return (
     <section
-      className='bg-gray-400 dark:bg-gray-000 py-10 px-6 md:px-12'
+      className='dark:bg-gray-000 py-0 px-6 md:px-12 mb-12'
       {...createItemSmartLink(props.item.system.id, props.item.system.name)}
       {...createFixedAddSmartLink('end')}
     >
@@ -26,8 +26,8 @@ export const PanelListingComponent: FC<Props> = (props) => {
       >
         {props.item.elements.panels.linkedItems.map((link) => (
           <div
-            className={`${childItemOrientation === 'vertical' ? 'my-0' : 'my-8'
-              }  rounded shadow-lg shadow-gray-200 bg-white duration-300 hover:-translate-y-3 w-full lg:w-1/3`}
+            className={`${childItemOrientation === 'vertical' ? 'my-0' : 'my-0'
+              }  rounded shadow-lg shadow-gray-300 bg-white duration-300 hover:-translate-y-3 w-full lg:w-1/3`}
             key={link.system.id}
             {...createItemSmartLink(props.item.system.id, props.item.system.codename)}
             {...createElementSmartLink(
@@ -59,7 +59,7 @@ export const PanelListingComponent: FC<Props> = (props) => {
                     width={400}
                     height={400}
                     className={`${childItemOrientation === 'vertical' ? 'mt-0' : ''
-                      } rounded-lg h-72 w-full object-cover mb-0`}
+                      } rounded-lg h-172 w-full object-cover mb-0`}
                   />
                 </figcaption>
               </figure>

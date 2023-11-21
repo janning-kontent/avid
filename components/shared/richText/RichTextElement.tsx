@@ -236,32 +236,32 @@ export const createDefaultResolvers = (
   block: {
     // TODO don't resolve when block contains link type markdef
     h1: ({ value, children }) => (
-      <h1 className='scroll-mt-20 pt-16 heading' id={sanitizeFirstChildText(value)}>
-        <a href={`#${sanitizeFirstChildText(value)}`}>{children}</a>
+      <h1 className='scroll-mt-20 pt-8 heading' id={sanitizeFirstChildText(value)}>
+        <a href={`#${sanitizeFirstChildText(value)}`}><strong>{children}</strong></a>
       </h1>
     ),
     h2: ({ value, children }) => (
-      <h2 className='scroll-mt-20 pt-16 heading' id={sanitizeFirstChildText(value)}>
+      <h2 className='scroll-mt-20 pt-8 heading' id={sanitizeFirstChildText(value)}>
         <a href={`#${sanitizeFirstChildText(value)}`}>{children}</a>
       </h2>
     ),
     h3: ({ value, children }) => (
-      <h3 className='scroll-mt-20 pt-16 heading' id={sanitizeFirstChildText(value)}>
-        <a href={`#${sanitizeFirstChildText(value)}`}>{children}</a>
+      <h3 className='scroll-mt-20 pt-8 heading' id={sanitizeFirstChildText(value)}>
+        <a href={`#${sanitizeFirstChildText(value)}`}><strong>{children}</strong></a>
       </h3>
     ),
     h4: ({ value, children }) => (
-      <h4 className='scroll-mt-20 pt-16 heading' id={sanitizeFirstChildText(value)}>
+      <h4 className='scroll-mt-20 pt-8 heading' id={sanitizeFirstChildText(value)}>
         <a href={`#${sanitizeFirstChildText(value)}`}>{children}</a>
       </h4>
     ),
     h5: ({ value, children }) => (
-      <h5 className='scroll-mt-20 pt-16 heading' id={sanitizeFirstChildText(value)}>
+      <h5 className='scroll-mt-20 pt-8 heading' id={sanitizeFirstChildText(value)}>
         <a href={`#${sanitizeFirstChildText(value)}`}>{children}</a>
       </h5>
     ),
     h6: ({ value, children }) => (
-      <h6 className='scroll-mt-20 pt-16 heading' id={sanitizeFirstChildText(value)}>
+      <h6 className='scroll-mt-20 pt-8 heading' id={sanitizeFirstChildText(value)}>
         <a href={`#${sanitizeFirstChildText(value)}`}>{children}</a>
       </h6>
     ),
